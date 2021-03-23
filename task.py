@@ -1,14 +1,15 @@
 import logging
 from collections import Counter
-from itertools import chain
 from datetime import datetime
+from itertools import chain
+from typing import List, Dict
 
 import config
 from parsers import get_next_pagination_url, get_animals
 from utils import get_response, is_latin_letter
 
 
-def parse_data(start_url: str) -> list[list[str]]:
+def parse_data(start_url: str) -> List[List[str]]:
     t1 = datetime.now()
     animals = []
     last_animal = ''
@@ -37,7 +38,7 @@ def parse_data(start_url: str) -> list[list[str]]:
     return animals
 
 
-def count_data(animals: list[str]) -> dict:
+def count_data(animals: List[str]) -> dict:
     raw_data = dict(Counter(item[0] for item in animals))
     return {
         letter: raw_data[letter]

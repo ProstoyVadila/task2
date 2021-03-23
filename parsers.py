@@ -1,3 +1,5 @@
+from typing import List
+
 from bs4 import BeautifulSoup
 
 
@@ -10,7 +12,7 @@ def get_next_pagination_url(html: str) -> str:
         raise Exception('Out of pages')
 
 
-def get_animals(html: str) -> list[str]:
+def get_animals(html: str) -> List[str]:
     soup = BeautifulSoup(html, 'lxml')
     div = soup.find('div', class_='mw-category')
     animals = [item.text for item in div.find_all('a')]

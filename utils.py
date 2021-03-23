@@ -1,6 +1,7 @@
 import random
 from string import ascii_letters
 from time import sleep
+from typing import Dict
 
 import requests
 from requests import Response
@@ -19,7 +20,7 @@ def get_response(url: str, from_captcha: bool = False) -> Response:
         sleep(3)
 
 
-def get_headers() -> dict[str, str]:
+def get_headers() -> Dict[str, str]:
     user_agent = random.choice(HEADERS)
     return {
         'user-agent': user_agent
