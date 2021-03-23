@@ -13,8 +13,10 @@ def get_response(url: str, from_captcha: bool = False) -> Response:
     if from_captcha:
         headers = get_headers()
         sleep(random.uniform(0.1, 1))
-
-    return requests.get(url=url, headers=headers)
+    try:
+        return requests.get(url=url, headers=headers)
+    except requests.exceptions.ReadTimeout:
+        sleep(3)
 
 
 def get_headers() -> dict[str, str]:
