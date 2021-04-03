@@ -19,11 +19,3 @@ def get_animals(html: str) -> List[str]:
     if animals is None:
         raise Exception('Invalid tags for get_animals')
     return animals
-
-
-def get_letter(html: str) -> str:
-    soup = BeautifulSoup(html, 'lxml')
-    letter = soup.find('div', class_='mw-category').find('h3').text
-    if letter is None:
-        raise Exception('Invalid tag for get_letter')
-    return letter

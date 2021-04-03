@@ -1,5 +1,5 @@
 BASE_URL = 'https://ru.wikipedia.org'
-URL = 'https://ru.wikipedia.org/w/index.php?title=Категория:Животные_по_алфавиту&from=А'
+URL = 'https://ru.wikipedia.org/w/index.php?title=Категория:Животные_по_алфавиту&from={letter}'
 
 LETTERS = (
   'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й',
